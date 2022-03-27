@@ -183,6 +183,10 @@ class OneTracker(Client):
 
         Returns:
             GetParcelResponse: Parcel Response Object.
+
+        Raises:
+
+        OneTrackerError: If get parcel failed.
         &#34;&#34;&#34;
         self.__check_session_object__()
         self.__check_parcel_id__(id)
@@ -202,6 +206,10 @@ class OneTracker(Client):
 
         Returns:
             DeleteParcelResponse: Delete Parcel Response Object.
+
+        Raises:
+
+        OneTrackerError: If delete parcel failed.
         &#34;&#34;&#34;
         self.__check_session_object__()
         self.__check_parcel_id__(id)
@@ -221,6 +229,10 @@ class OneTracker(Client):
 
         Returns:
             ListCarrierResponse: List Carrier Response Object.
+
+        Raises:
+
+        OneTrackerError: If list carriers failed.
         &#34;&#34;&#34;
         self.__check_session_object__()
         if tracking_id is not None:
@@ -403,6 +415,10 @@ class OneTracker(Client):
 
         Returns:
             GetParcelResponse: Parcel Response Object.
+
+        Raises:
+
+        OneTrackerError: If get parcel failed.
         &#34;&#34;&#34;
         self.__check_session_object__()
         self.__check_parcel_id__(id)
@@ -422,6 +438,10 @@ class OneTracker(Client):
 
         Returns:
             DeleteParcelResponse: Delete Parcel Response Object.
+
+        Raises:
+
+        OneTrackerError: If delete parcel failed.
         &#34;&#34;&#34;
         self.__check_session_object__()
         self.__check_parcel_id__(id)
@@ -441,6 +461,10 @@ class OneTracker(Client):
 
         Returns:
             ListCarrierResponse: List Carrier Response Object.
+
+        Raises:
+
+        OneTrackerError: If list carriers failed.
         &#34;&#34;&#34;
         self.__check_session_object__()
         if tracking_id is not None:
@@ -478,7 +502,9 @@ class OneTracker(Client):
 <dl>
 <dt><code>DeleteParcelResponse</code></dt>
 <dd>Delete Parcel Response Object.</dd>
-</dl></div>
+</dl>
+<p>Raises:</p>
+<p>OneTrackerError: If delete parcel failed.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -493,6 +519,10 @@ class OneTracker(Client):
 
     Returns:
         DeleteParcelResponse: Delete Parcel Response Object.
+
+    Raises:
+
+    OneTrackerError: If delete parcel failed.
     &#34;&#34;&#34;
     self.__check_session_object__()
     self.__check_parcel_id__(id)
@@ -514,7 +544,9 @@ class OneTracker(Client):
 <dl>
 <dt><code>GetParcelResponse</code></dt>
 <dd>Parcel Response Object.</dd>
-</dl></div>
+</dl>
+<p>Raises:</p>
+<p>OneTrackerError: If get parcel failed.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -529,6 +561,10 @@ class OneTracker(Client):
 
     Returns:
         GetParcelResponse: Parcel Response Object.
+
+    Raises:
+
+    OneTrackerError: If get parcel failed.
     &#34;&#34;&#34;
     self.__check_session_object__()
     self.__check_parcel_id__(id)
@@ -550,7 +586,9 @@ class OneTracker(Client):
 <dl>
 <dt><code>ListCarrierResponse</code></dt>
 <dd>List Carrier Response Object.</dd>
-</dl></div>
+</dl>
+<p>Raises:</p>
+<p>OneTrackerError: If list carriers failed.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -565,6 +603,10 @@ class OneTracker(Client):
 
     Returns:
         ListCarrierResponse: List Carrier Response Object.
+
+    Raises:
+
+    OneTrackerError: If list carriers failed.
     &#34;&#34;&#34;
     self.__check_session_object__()
     if tracking_id is not None:

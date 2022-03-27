@@ -108,6 +108,10 @@ class OneTracker(Client):
 
         Returns:
             AuthenticationTokenResponse: Authentication Token Response Object.
+
+        Raises:
+
+        OneTrackerError: If login failed.
         """
         try:
             results = await self._request("/auth/token", method='POST', data=json.dumps({"email": email, "password": password}))
@@ -127,6 +131,10 @@ class OneTracker(Client):
 
         Returns:
             ListParcelsResponse: List Parcels Response Object.
+
+        Raises:
+
+        OneTrackerError: If list parcels failed.
         """
         self.__check_session_object__()
         archived_str = "true" if archived else "false"

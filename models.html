@@ -1,0 +1,1524 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>onetracker_api.models API documentation</title>
+<meta name="description" content="Models for OneTracker." />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>onetracker_api.models</code></h1>
+</header>
+<section id="section-intro">
+<p>Models for OneTracker.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;Models for OneTracker.&#34;&#34;&#34;
+
+from dataclasses import dataclass
+import datetime
+from typing import List
+import datetime
+
+from .exceptions import OneTrackerError
+
+@dataclass(frozen=True)
+class SessionObject:
+    &#34;&#34;&#34;
+    Object holding session information from the OneTracker API.
+
+    Attributes:
+
+    user_id: User ID of the authenticated user.
+
+    token: Authentication Token of the authenticated user.
+
+    expiration: Expiration time and date of the authentication token.
+    &#34;&#34;&#34;
+
+    user_id: int
+    token: str
+    expiration: datetime.datetime
+
+    @staticmethod
+    def from_dict(data: dict):
+        return SessionObject(
+            user_id=data.get(&#34;user_id&#34;),
+            token=data.get(&#34;token&#34;),
+            expiration=datetime.datetime.fromisoformat(data.get(&#34;expiration&#34;).split(&#34;.&#34;)[0])
+        )
+
+@dataclass(frozen=True)
+class AuthenticationTokenResponse:
+    &#34;&#34;&#34;
+    Object holding authentication token response from the OneTracker API.
+
+    Attributes:
+
+    message: Response message.
+
+    session: SessionObject.
+    &#34;&#34;&#34;
+
+    message: str
+    session: SessionObject
+
+    @staticmethod
+    def from_dict(data: dict):
+        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+            if data.get(&#34;message&#34;):
+                raise OneTrackerError(data.get(&#34;message&#34;))
+            else:
+                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+        else:
+            return AuthenticationTokenResponse(
+                message=data.get(&#34;message&#34;),
+                session=SessionObject.from_dict(data.get(&#34;session&#34;))
+            )
+
+@dataclass(frozen=True)
+class TrackingEvent:
+    &#34;&#34;&#34;
+    Object holding a tracking event
+
+    Attributes:
+
+    id: Tracking event ID.
+
+    parcel_id: Parcel ID.
+
+    carrier_id: Carrier ID.
+
+    carrier_name: Carrier name.
+
+    status: Status.
+
+    text: Text.
+
+    locatiom: Location.
+
+    latitude: Latitude.
+
+    longitude: Longitude.
+
+    time: Time.
+
+    time_added: Time added.
+    &#34;&#34;&#34;
+
+    id: int
+    parcel_id: int
+    carrier_id: int
+    carrier_name: str
+    status: str
+    text: str
+    location: str
+    latitude: float
+    longitude: float
+    time: datetime.datetime
+    time_added: datetime.datetime
+
+    @staticmethod
+    def from_dict(data: dict):
+        return TrackingEvent(
+            id=data.get(&#34;id&#34;),
+            parcel_id=data.get(&#34;parcel_id&#34;),
+            carrier_id=data.get(&#34;carrier_id&#34;),
+            carrier_name=data.get(&#34;carrier_name&#34;),
+            status=data.get(&#34;status&#34;),
+            text=data.get(&#34;text&#34;),
+            location=data.get(&#34;location&#34;),
+            latitude=data.get(&#34;latitude&#34;),
+            longitude=data.get(&#34;longitude&#34;),
+            time=datetime.datetime.fromisoformat(data.get(&#34;time&#34;).split(&#34;Z&#34;)[0]),
+            time_added=datetime.datetime.fromisoformat(data.get(&#34;time_added&#34;).split(&#34;Z&#34;)[0])
+        )
+
+
+@dataclass(frozen=True)
+class Parcel:
+    &#34;&#34;&#34;
+    Object holding parcel information from the OneTracker API.
+
+    Attributes:
+
+    id: Parcel ID.
+
+    user_id: User ID of the authenticated user.
+
+    email_id: Email ID of the email associated with the parcel.
+
+    email_sender: Email sender of the email associated with the parcel.
+
+    retailer_name: Name of the retailer.
+
+    description: Description of the parcel.
+
+    notification_level: Notification level of the parcel.
+
+    is_archived: Whether the parcel is archived or not.
+
+    carrier: Carrier of the parcel.
+
+    carrier_name: Carrier name of the parcel.
+
+    carrier_redirection_available: Whether carrier redirection is available or not.
+
+    tracker_cached: Whether the tracker is cached or not.
+
+    tracking_id: Tracking ID of the parcel.
+
+    tracking_url: Tracking URL of the parcel.
+
+    tracking_status: Tracking status of the parcel.
+
+    tracking_status_description: Tracking status description of the parcel.
+
+    tracking_status_text: Tracking status text of the parcel.
+
+    tracking_extra_info: Tracking extra info of the parcel.
+
+    tracking_location: Tracking location of the parcel.
+
+    tracking_time_estimated: Tracking time estimated of the parcel.
+
+    tracking_time_delivered: Tracking time delivered of the parcel.
+
+    tracking_lock: Whether the tracking is locked or not.
+
+    tracking_events: List of TrackingEvent objects.
+
+    time_added: Time added of the parcel.
+
+    time_updated: Time updated of the parcel.
+    &#34;&#34;&#34;
+
+    id: int
+    user_id: int
+    email_id: int
+    email_sender: str
+    retailer_name: str
+    description: str
+    notification_level: int
+    is_archived: bool
+    carrier: str
+    carrier_name: str
+    carrier_redirection_available: bool
+    tracker_cached: bool
+    tracking_id: str
+    tracking_url: str
+    tracking_status: str
+    tracking_status_description: str
+    tracking_status_text: str
+    tracking_extra_info: str
+    tracking_location: str
+    tracking_time_estimated: datetime.datetime
+    tracking_time_delivered: datetime.datetime
+    tracking_lock: bool
+    tracking_events: List[TrackingEvent]
+    time_added: datetime.datetime
+    time_updated: datetime.datetime
+
+    @staticmethod
+    def from_dict(data: dict):
+        return Parcel(
+            id=data.get(&#34;id&#34;),
+            user_id=data.get(&#34;user_id&#34;),
+            email_id=data.get(&#34;email_id&#34;),
+            email_sender=data.get(&#34;email_sender&#34;),
+            retailer_name=data.get(&#34;retailer_name&#34;),
+            description=data.get(&#34;description&#34;),
+            notification_level=data.get(&#34;notification_level&#34;),
+            is_archived=data.get(&#34;is_archived&#34;),
+            carrier=data.get(&#34;carrier&#34;),
+            carrier_name=data.get(&#34;carrier_name&#34;),
+            carrier_redirection_available=data.get(&#34;carrier_redirection_available&#34;),
+            tracker_cached=data.get(&#34;tracker_cached&#34;),
+            tracking_id=data.get(&#34;tracking_id&#34;),
+            tracking_url=data.get(&#34;tracking_url&#34;),
+            tracking_status=data.get(&#34;tracking_status&#34;),
+            tracking_status_description=data.get(&#34;tracking_status_description&#34;),
+            tracking_status_text=data.get(&#34;tracking_status_text&#34;),
+            tracking_extra_info=data.get(&#34;tracking_extra_info&#34;),
+            tracking_location=data.get(&#34;tracking_location&#34;),
+            tracking_time_estimated=datetime.datetime.fromisoformat(data.get(&#34;tracking_time_estimated&#34;).split(&#34;Z&#34;)[0]),
+            tracking_time_delivered=datetime.datetime.fromisoformat(data.get(&#34;tracking_time_delivered&#34;).split(&#34;Z&#34;)[0]),
+            tracking_lock=data.get(&#34;tracking_lock&#34;),
+            tracking_events=[TrackingEvent.from_dict(tracking_event) for tracking_event in data.get(&#34;tracking_events&#34;) or []],
+            time_added=datetime.datetime.fromisoformat(data.get(&#34;time_added&#34;).split(&#34;Z&#34;)[0]),
+            time_updated=datetime.datetime.fromisoformat(data.get(&#34;time_updated&#34;).split(&#34;Z&#34;)[0])
+        )
+
+@dataclass(frozen=True)
+class ListParcelsResponse:
+    &#34;&#34;&#34;
+    Object representing the response of List Parcels.
+
+    Attributes:
+
+    message: Response message.
+
+    parcels: List of Parcel objects.
+    &#34;&#34;&#34;
+
+    message: str
+    parcels: List[Parcel]
+
+    @staticmethod
+    def from_dict(data: dict):
+        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+            if data.get(&#34;message&#34;):
+                raise OneTrackerError(data.get(&#34;message&#34;))
+            else:
+                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+        else:
+            return ListParcelsResponse(
+                message=data.get(&#34;message&#34;),
+                parcels=[Parcel.from_dict(parcel) for parcel in data.get(&#34;parcels&#34;) or []]
+            )
+
+@dataclass(frozen=True)
+class GetParcelResponse:
+    &#34;&#34;&#34;
+    Object representing the response of List Parcel.
+
+    Attributes:
+
+    message: Response message.
+
+    parcel: Parcel object.
+    &#34;&#34;&#34;
+
+    message: str
+    parcel: Parcel
+
+    @staticmethod
+    def from_dict(data: dict):
+        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+            if data.get(&#34;message&#34;):
+                raise OneTrackerError(data.get(&#34;message&#34;))
+            else:
+                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+        else:
+            return GetParcelResponse(
+                message=data.get(&#34;message&#34;),
+                parcel=Parcel.from_dict(data.get(&#34;parcel&#34;))
+            )
+
+@dataclass(frozen=True)
+class DeleteParcelResponse:
+    &#34;&#34;&#34;
+    Object representing the response of Delete Parcel.
+
+    Attributes:
+
+    message: Response message.
+    &#34;&#34;&#34;
+
+    message: str
+
+    @staticmethod
+    def from_dict(data: dict):
+        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+            if data.get(&#34;message&#34;):
+                raise OneTrackerError(data.get(&#34;message&#34;))
+            else:
+                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+        else:
+            return DeleteParcelResponse(
+                message=data.get(&#34;message&#34;)
+            )
+
+@dataclass(frozen=True)
+class Carrier:
+    &#34;&#34;&#34;
+    Object representing a carrier.
+
+    Attributes:
+
+    id: ID of the carrier.
+
+    name: Name of the carrier.
+
+    frequently_used: If the carrier is frequently used or not.
+    &#34;&#34;&#34;
+
+    id: str
+    name: str
+    frequently_used: bool
+
+    @staticmethod
+    def from_dict(data: dict):
+        return Carrier(
+            id=data.get(&#34;id&#34;),
+            name=data.get(&#34;name&#34;),
+            frequently_used=data.get(&#34;frequently_used&#34;),
+        )
+
+@dataclass(frozen=True)
+class ListCarriersResponse:
+    &#34;&#34;&#34;
+    Object representing the response of List Carriers.
+
+    Attributes:
+
+    message: Response message.
+
+    carriers: List of Carrier objects.
+    &#34;&#34;&#34;
+
+    message: str
+    carriers: List[Carrier]
+
+    @staticmethod
+    def from_dict(data: dict):
+        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+            if data.get(&#34;message&#34;):
+                raise OneTrackerError(data.get(&#34;message&#34;))
+            else:
+                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+        else:
+            return ListCarriersResponse(
+                message=data.get(&#34;message&#34;),
+                carriers=[Carrier.from_dict(carrier) for carrier in data.get(&#34;carriers&#34;) or []]
+            )</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="onetracker_api.models.AuthenticationTokenResponse"><code class="flex name class">
+<span>class <span class="ident">AuthenticationTokenResponse</span></span>
+<span>(</span><span>message: str, session: <a title="onetracker_api.models.SessionObject" href="#onetracker_api.models.SessionObject">SessionObject</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Object holding authentication token response from the OneTracker API.</p>
+<p>Attributes:</p>
+<p>message: Response message.</p>
+<p>session: SessionObject.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AuthenticationTokenResponse:
+    &#34;&#34;&#34;
+    Object holding authentication token response from the OneTracker API.
+
+    Attributes:
+
+    message: Response message.
+
+    session: SessionObject.
+    &#34;&#34;&#34;
+
+    message: str
+    session: SessionObject
+
+    @staticmethod
+    def from_dict(data: dict):
+        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+            if data.get(&#34;message&#34;):
+                raise OneTrackerError(data.get(&#34;message&#34;))
+            else:
+                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+        else:
+            return AuthenticationTokenResponse(
+                message=data.get(&#34;message&#34;),
+                session=SessionObject.from_dict(data.get(&#34;session&#34;))
+            )</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="onetracker_api.models.AuthenticationTokenResponse.message"><code class="name">var <span class="ident">message</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.AuthenticationTokenResponse.session"><code class="name">var <span class="ident">session</span> : <a title="onetracker_api.models.SessionObject" href="#onetracker_api.models.SessionObject">SessionObject</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="onetracker_api.models.AuthenticationTokenResponse.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data: dict):
+    if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+    else:
+        return AuthenticationTokenResponse(
+            message=data.get(&#34;message&#34;),
+            session=SessionObject.from_dict(data.get(&#34;session&#34;))
+        )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="onetracker_api.models.Carrier"><code class="flex name class">
+<span>class <span class="ident">Carrier</span></span>
+<span>(</span><span>id: str, name: str, frequently_used: bool)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Object representing a carrier.</p>
+<p>Attributes:</p>
+<p>id: ID of the carrier.</p>
+<p>name: Name of the carrier.</p>
+<p>frequently_used: If the carrier is frequently used or not.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Carrier:
+    &#34;&#34;&#34;
+    Object representing a carrier.
+
+    Attributes:
+
+    id: ID of the carrier.
+
+    name: Name of the carrier.
+
+    frequently_used: If the carrier is frequently used or not.
+    &#34;&#34;&#34;
+
+    id: str
+    name: str
+    frequently_used: bool
+
+    @staticmethod
+    def from_dict(data: dict):
+        return Carrier(
+            id=data.get(&#34;id&#34;),
+            name=data.get(&#34;name&#34;),
+            frequently_used=data.get(&#34;frequently_used&#34;),
+        )</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="onetracker_api.models.Carrier.frequently_used"><code class="name">var <span class="ident">frequently_used</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Carrier.id"><code class="name">var <span class="ident">id</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Carrier.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="onetracker_api.models.Carrier.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data: dict):
+    return Carrier(
+        id=data.get(&#34;id&#34;),
+        name=data.get(&#34;name&#34;),
+        frequently_used=data.get(&#34;frequently_used&#34;),
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="onetracker_api.models.DeleteParcelResponse"><code class="flex name class">
+<span>class <span class="ident">DeleteParcelResponse</span></span>
+<span>(</span><span>message: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Object representing the response of Delete Parcel.</p>
+<p>Attributes:</p>
+<p>message: Response message.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DeleteParcelResponse:
+    &#34;&#34;&#34;
+    Object representing the response of Delete Parcel.
+
+    Attributes:
+
+    message: Response message.
+    &#34;&#34;&#34;
+
+    message: str
+
+    @staticmethod
+    def from_dict(data: dict):
+        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+            if data.get(&#34;message&#34;):
+                raise OneTrackerError(data.get(&#34;message&#34;))
+            else:
+                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+        else:
+            return DeleteParcelResponse(
+                message=data.get(&#34;message&#34;)
+            )</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="onetracker_api.models.DeleteParcelResponse.message"><code class="name">var <span class="ident">message</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="onetracker_api.models.DeleteParcelResponse.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data: dict):
+    if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+    else:
+        return DeleteParcelResponse(
+            message=data.get(&#34;message&#34;)
+        )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="onetracker_api.models.GetParcelResponse"><code class="flex name class">
+<span>class <span class="ident">GetParcelResponse</span></span>
+<span>(</span><span>message: str, parcel: <a title="onetracker_api.models.Parcel" href="#onetracker_api.models.Parcel">Parcel</a>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Object representing the response of List Parcel.</p>
+<p>Attributes:</p>
+<p>message: Response message.</p>
+<p>parcel: Parcel object.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GetParcelResponse:
+    &#34;&#34;&#34;
+    Object representing the response of List Parcel.
+
+    Attributes:
+
+    message: Response message.
+
+    parcel: Parcel object.
+    &#34;&#34;&#34;
+
+    message: str
+    parcel: Parcel
+
+    @staticmethod
+    def from_dict(data: dict):
+        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+            if data.get(&#34;message&#34;):
+                raise OneTrackerError(data.get(&#34;message&#34;))
+            else:
+                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+        else:
+            return GetParcelResponse(
+                message=data.get(&#34;message&#34;),
+                parcel=Parcel.from_dict(data.get(&#34;parcel&#34;))
+            )</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="onetracker_api.models.GetParcelResponse.message"><code class="name">var <span class="ident">message</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.GetParcelResponse.parcel"><code class="name">var <span class="ident">parcel</span> : <a title="onetracker_api.models.Parcel" href="#onetracker_api.models.Parcel">Parcel</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="onetracker_api.models.GetParcelResponse.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data: dict):
+    if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+    else:
+        return GetParcelResponse(
+            message=data.get(&#34;message&#34;),
+            parcel=Parcel.from_dict(data.get(&#34;parcel&#34;))
+        )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="onetracker_api.models.ListCarriersResponse"><code class="flex name class">
+<span>class <span class="ident">ListCarriersResponse</span></span>
+<span>(</span><span>message: str, carriers: List[<a title="onetracker_api.models.Carrier" href="#onetracker_api.models.Carrier">Carrier</a>])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Object representing the response of List Carriers.</p>
+<p>Attributes:</p>
+<p>message: Response message.</p>
+<p>carriers: List of Carrier objects.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ListCarriersResponse:
+    &#34;&#34;&#34;
+    Object representing the response of List Carriers.
+
+    Attributes:
+
+    message: Response message.
+
+    carriers: List of Carrier objects.
+    &#34;&#34;&#34;
+
+    message: str
+    carriers: List[Carrier]
+
+    @staticmethod
+    def from_dict(data: dict):
+        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+            if data.get(&#34;message&#34;):
+                raise OneTrackerError(data.get(&#34;message&#34;))
+            else:
+                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+        else:
+            return ListCarriersResponse(
+                message=data.get(&#34;message&#34;),
+                carriers=[Carrier.from_dict(carrier) for carrier in data.get(&#34;carriers&#34;) or []]
+            )</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="onetracker_api.models.ListCarriersResponse.carriers"><code class="name">var <span class="ident">carriers</span> : List[<a title="onetracker_api.models.Carrier" href="#onetracker_api.models.Carrier">Carrier</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.ListCarriersResponse.message"><code class="name">var <span class="ident">message</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="onetracker_api.models.ListCarriersResponse.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data: dict):
+    if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+    else:
+        return ListCarriersResponse(
+            message=data.get(&#34;message&#34;),
+            carriers=[Carrier.from_dict(carrier) for carrier in data.get(&#34;carriers&#34;) or []]
+        )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="onetracker_api.models.ListParcelsResponse"><code class="flex name class">
+<span>class <span class="ident">ListParcelsResponse</span></span>
+<span>(</span><span>message: str, parcels: List[<a title="onetracker_api.models.Parcel" href="#onetracker_api.models.Parcel">Parcel</a>])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Object representing the response of List Parcels.</p>
+<p>Attributes:</p>
+<p>message: Response message.</p>
+<p>parcels: List of Parcel objects.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ListParcelsResponse:
+    &#34;&#34;&#34;
+    Object representing the response of List Parcels.
+
+    Attributes:
+
+    message: Response message.
+
+    parcels: List of Parcel objects.
+    &#34;&#34;&#34;
+
+    message: str
+    parcels: List[Parcel]
+
+    @staticmethod
+    def from_dict(data: dict):
+        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+            if data.get(&#34;message&#34;):
+                raise OneTrackerError(data.get(&#34;message&#34;))
+            else:
+                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+        else:
+            return ListParcelsResponse(
+                message=data.get(&#34;message&#34;),
+                parcels=[Parcel.from_dict(parcel) for parcel in data.get(&#34;parcels&#34;) or []]
+            )</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="onetracker_api.models.ListParcelsResponse.message"><code class="name">var <span class="ident">message</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.ListParcelsResponse.parcels"><code class="name">var <span class="ident">parcels</span> : List[<a title="onetracker_api.models.Parcel" href="#onetracker_api.models.Parcel">Parcel</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="onetracker_api.models.ListParcelsResponse.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data: dict):
+    if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
+    else:
+        return ListParcelsResponse(
+            message=data.get(&#34;message&#34;),
+            parcels=[Parcel.from_dict(parcel) for parcel in data.get(&#34;parcels&#34;) or []]
+        )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="onetracker_api.models.Parcel"><code class="flex name class">
+<span>class <span class="ident">Parcel</span></span>
+<span>(</span><span>id: int, user_id: int, email_id: int, email_sender: str, retailer_name: str, description: str, notification_level: int, is_archived: bool, carrier: str, carrier_name: str, carrier_redirection_available: bool, tracker_cached: bool, tracking_id: str, tracking_url: str, tracking_status: str, tracking_status_description: str, tracking_status_text: str, tracking_extra_info: str, tracking_location: str, tracking_time_estimated: datetime.datetime, tracking_time_delivered: datetime.datetime, tracking_lock: bool, tracking_events: List[<a title="onetracker_api.models.TrackingEvent" href="#onetracker_api.models.TrackingEvent">TrackingEvent</a>], time_added: datetime.datetime, time_updated: datetime.datetime)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Object holding parcel information from the OneTracker API.</p>
+<p>Attributes:</p>
+<p>id: Parcel ID.</p>
+<p>user_id: User ID of the authenticated user.</p>
+<p>email_id: Email ID of the email associated with the parcel.</p>
+<p>email_sender: Email sender of the email associated with the parcel.</p>
+<p>retailer_name: Name of the retailer.</p>
+<p>description: Description of the parcel.</p>
+<p>notification_level: Notification level of the parcel.</p>
+<p>is_archived: Whether the parcel is archived or not.</p>
+<p>carrier: Carrier of the parcel.</p>
+<p>carrier_name: Carrier name of the parcel.</p>
+<p>carrier_redirection_available: Whether carrier redirection is available or not.</p>
+<p>tracker_cached: Whether the tracker is cached or not.</p>
+<p>tracking_id: Tracking ID of the parcel.</p>
+<p>tracking_url: Tracking URL of the parcel.</p>
+<p>tracking_status: Tracking status of the parcel.</p>
+<p>tracking_status_description: Tracking status description of the parcel.</p>
+<p>tracking_status_text: Tracking status text of the parcel.</p>
+<p>tracking_extra_info: Tracking extra info of the parcel.</p>
+<p>tracking_location: Tracking location of the parcel.</p>
+<p>tracking_time_estimated: Tracking time estimated of the parcel.</p>
+<p>tracking_time_delivered: Tracking time delivered of the parcel.</p>
+<p>tracking_lock: Whether the tracking is locked or not.</p>
+<p>tracking_events: List of TrackingEvent objects.</p>
+<p>time_added: Time added of the parcel.</p>
+<p>time_updated: Time updated of the parcel.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Parcel:
+    &#34;&#34;&#34;
+    Object holding parcel information from the OneTracker API.
+
+    Attributes:
+
+    id: Parcel ID.
+
+    user_id: User ID of the authenticated user.
+
+    email_id: Email ID of the email associated with the parcel.
+
+    email_sender: Email sender of the email associated with the parcel.
+
+    retailer_name: Name of the retailer.
+
+    description: Description of the parcel.
+
+    notification_level: Notification level of the parcel.
+
+    is_archived: Whether the parcel is archived or not.
+
+    carrier: Carrier of the parcel.
+
+    carrier_name: Carrier name of the parcel.
+
+    carrier_redirection_available: Whether carrier redirection is available or not.
+
+    tracker_cached: Whether the tracker is cached or not.
+
+    tracking_id: Tracking ID of the parcel.
+
+    tracking_url: Tracking URL of the parcel.
+
+    tracking_status: Tracking status of the parcel.
+
+    tracking_status_description: Tracking status description of the parcel.
+
+    tracking_status_text: Tracking status text of the parcel.
+
+    tracking_extra_info: Tracking extra info of the parcel.
+
+    tracking_location: Tracking location of the parcel.
+
+    tracking_time_estimated: Tracking time estimated of the parcel.
+
+    tracking_time_delivered: Tracking time delivered of the parcel.
+
+    tracking_lock: Whether the tracking is locked or not.
+
+    tracking_events: List of TrackingEvent objects.
+
+    time_added: Time added of the parcel.
+
+    time_updated: Time updated of the parcel.
+    &#34;&#34;&#34;
+
+    id: int
+    user_id: int
+    email_id: int
+    email_sender: str
+    retailer_name: str
+    description: str
+    notification_level: int
+    is_archived: bool
+    carrier: str
+    carrier_name: str
+    carrier_redirection_available: bool
+    tracker_cached: bool
+    tracking_id: str
+    tracking_url: str
+    tracking_status: str
+    tracking_status_description: str
+    tracking_status_text: str
+    tracking_extra_info: str
+    tracking_location: str
+    tracking_time_estimated: datetime.datetime
+    tracking_time_delivered: datetime.datetime
+    tracking_lock: bool
+    tracking_events: List[TrackingEvent]
+    time_added: datetime.datetime
+    time_updated: datetime.datetime
+
+    @staticmethod
+    def from_dict(data: dict):
+        return Parcel(
+            id=data.get(&#34;id&#34;),
+            user_id=data.get(&#34;user_id&#34;),
+            email_id=data.get(&#34;email_id&#34;),
+            email_sender=data.get(&#34;email_sender&#34;),
+            retailer_name=data.get(&#34;retailer_name&#34;),
+            description=data.get(&#34;description&#34;),
+            notification_level=data.get(&#34;notification_level&#34;),
+            is_archived=data.get(&#34;is_archived&#34;),
+            carrier=data.get(&#34;carrier&#34;),
+            carrier_name=data.get(&#34;carrier_name&#34;),
+            carrier_redirection_available=data.get(&#34;carrier_redirection_available&#34;),
+            tracker_cached=data.get(&#34;tracker_cached&#34;),
+            tracking_id=data.get(&#34;tracking_id&#34;),
+            tracking_url=data.get(&#34;tracking_url&#34;),
+            tracking_status=data.get(&#34;tracking_status&#34;),
+            tracking_status_description=data.get(&#34;tracking_status_description&#34;),
+            tracking_status_text=data.get(&#34;tracking_status_text&#34;),
+            tracking_extra_info=data.get(&#34;tracking_extra_info&#34;),
+            tracking_location=data.get(&#34;tracking_location&#34;),
+            tracking_time_estimated=datetime.datetime.fromisoformat(data.get(&#34;tracking_time_estimated&#34;).split(&#34;Z&#34;)[0]),
+            tracking_time_delivered=datetime.datetime.fromisoformat(data.get(&#34;tracking_time_delivered&#34;).split(&#34;Z&#34;)[0]),
+            tracking_lock=data.get(&#34;tracking_lock&#34;),
+            tracking_events=[TrackingEvent.from_dict(tracking_event) for tracking_event in data.get(&#34;tracking_events&#34;) or []],
+            time_added=datetime.datetime.fromisoformat(data.get(&#34;time_added&#34;).split(&#34;Z&#34;)[0]),
+            time_updated=datetime.datetime.fromisoformat(data.get(&#34;time_updated&#34;).split(&#34;Z&#34;)[0])
+        )</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="onetracker_api.models.Parcel.carrier"><code class="name">var <span class="ident">carrier</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.carrier_name"><code class="name">var <span class="ident">carrier_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.carrier_redirection_available"><code class="name">var <span class="ident">carrier_redirection_available</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.description"><code class="name">var <span class="ident">description</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.email_id"><code class="name">var <span class="ident">email_id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.email_sender"><code class="name">var <span class="ident">email_sender</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.id"><code class="name">var <span class="ident">id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.is_archived"><code class="name">var <span class="ident">is_archived</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.notification_level"><code class="name">var <span class="ident">notification_level</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.retailer_name"><code class="name">var <span class="ident">retailer_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.time_added"><code class="name">var <span class="ident">time_added</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.time_updated"><code class="name">var <span class="ident">time_updated</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracker_cached"><code class="name">var <span class="ident">tracker_cached</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_events"><code class="name">var <span class="ident">tracking_events</span> : List[<a title="onetracker_api.models.TrackingEvent" href="#onetracker_api.models.TrackingEvent">TrackingEvent</a>]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_extra_info"><code class="name">var <span class="ident">tracking_extra_info</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_id"><code class="name">var <span class="ident">tracking_id</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_location"><code class="name">var <span class="ident">tracking_location</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_lock"><code class="name">var <span class="ident">tracking_lock</span> : bool</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_status"><code class="name">var <span class="ident">tracking_status</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_status_description"><code class="name">var <span class="ident">tracking_status_description</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_status_text"><code class="name">var <span class="ident">tracking_status_text</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_time_delivered"><code class="name">var <span class="ident">tracking_time_delivered</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_time_estimated"><code class="name">var <span class="ident">tracking_time_estimated</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.tracking_url"><code class="name">var <span class="ident">tracking_url</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.Parcel.user_id"><code class="name">var <span class="ident">user_id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="onetracker_api.models.Parcel.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data: dict):
+    return Parcel(
+        id=data.get(&#34;id&#34;),
+        user_id=data.get(&#34;user_id&#34;),
+        email_id=data.get(&#34;email_id&#34;),
+        email_sender=data.get(&#34;email_sender&#34;),
+        retailer_name=data.get(&#34;retailer_name&#34;),
+        description=data.get(&#34;description&#34;),
+        notification_level=data.get(&#34;notification_level&#34;),
+        is_archived=data.get(&#34;is_archived&#34;),
+        carrier=data.get(&#34;carrier&#34;),
+        carrier_name=data.get(&#34;carrier_name&#34;),
+        carrier_redirection_available=data.get(&#34;carrier_redirection_available&#34;),
+        tracker_cached=data.get(&#34;tracker_cached&#34;),
+        tracking_id=data.get(&#34;tracking_id&#34;),
+        tracking_url=data.get(&#34;tracking_url&#34;),
+        tracking_status=data.get(&#34;tracking_status&#34;),
+        tracking_status_description=data.get(&#34;tracking_status_description&#34;),
+        tracking_status_text=data.get(&#34;tracking_status_text&#34;),
+        tracking_extra_info=data.get(&#34;tracking_extra_info&#34;),
+        tracking_location=data.get(&#34;tracking_location&#34;),
+        tracking_time_estimated=datetime.datetime.fromisoformat(data.get(&#34;tracking_time_estimated&#34;).split(&#34;Z&#34;)[0]),
+        tracking_time_delivered=datetime.datetime.fromisoformat(data.get(&#34;tracking_time_delivered&#34;).split(&#34;Z&#34;)[0]),
+        tracking_lock=data.get(&#34;tracking_lock&#34;),
+        tracking_events=[TrackingEvent.from_dict(tracking_event) for tracking_event in data.get(&#34;tracking_events&#34;) or []],
+        time_added=datetime.datetime.fromisoformat(data.get(&#34;time_added&#34;).split(&#34;Z&#34;)[0]),
+        time_updated=datetime.datetime.fromisoformat(data.get(&#34;time_updated&#34;).split(&#34;Z&#34;)[0])
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="onetracker_api.models.SessionObject"><code class="flex name class">
+<span>class <span class="ident">SessionObject</span></span>
+<span>(</span><span>user_id: int, token: str, expiration: datetime.datetime)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Object holding session information from the OneTracker API.</p>
+<p>Attributes:</p>
+<p>user_id: User ID of the authenticated user.</p>
+<p>token: Authentication Token of the authenticated user.</p>
+<p>expiration: Expiration time and date of the authentication token.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SessionObject:
+    &#34;&#34;&#34;
+    Object holding session information from the OneTracker API.
+
+    Attributes:
+
+    user_id: User ID of the authenticated user.
+
+    token: Authentication Token of the authenticated user.
+
+    expiration: Expiration time and date of the authentication token.
+    &#34;&#34;&#34;
+
+    user_id: int
+    token: str
+    expiration: datetime.datetime
+
+    @staticmethod
+    def from_dict(data: dict):
+        return SessionObject(
+            user_id=data.get(&#34;user_id&#34;),
+            token=data.get(&#34;token&#34;),
+            expiration=datetime.datetime.fromisoformat(data.get(&#34;expiration&#34;).split(&#34;.&#34;)[0])
+        )</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="onetracker_api.models.SessionObject.expiration"><code class="name">var <span class="ident">expiration</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.SessionObject.token"><code class="name">var <span class="ident">token</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.SessionObject.user_id"><code class="name">var <span class="ident">user_id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="onetracker_api.models.SessionObject.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data: dict):
+    return SessionObject(
+        user_id=data.get(&#34;user_id&#34;),
+        token=data.get(&#34;token&#34;),
+        expiration=datetime.datetime.fromisoformat(data.get(&#34;expiration&#34;).split(&#34;.&#34;)[0])
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent"><code class="flex name class">
+<span>class <span class="ident">TrackingEvent</span></span>
+<span>(</span><span>id: int, parcel_id: int, carrier_id: int, carrier_name: str, status: str, text: str, location: str, latitude: float, longitude: float, time: datetime.datetime, time_added: datetime.datetime)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Object holding a tracking event</p>
+<p>Attributes:</p>
+<p>id: Tracking event ID.</p>
+<p>parcel_id: Parcel ID.</p>
+<p>carrier_id: Carrier ID.</p>
+<p>carrier_name: Carrier name.</p>
+<p>status: Status.</p>
+<p>text: Text.</p>
+<p>locatiom: Location.</p>
+<p>latitude: Latitude.</p>
+<p>longitude: Longitude.</p>
+<p>time: Time.</p>
+<p>time_added: Time added.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class TrackingEvent:
+    &#34;&#34;&#34;
+    Object holding a tracking event
+
+    Attributes:
+
+    id: Tracking event ID.
+
+    parcel_id: Parcel ID.
+
+    carrier_id: Carrier ID.
+
+    carrier_name: Carrier name.
+
+    status: Status.
+
+    text: Text.
+
+    locatiom: Location.
+
+    latitude: Latitude.
+
+    longitude: Longitude.
+
+    time: Time.
+
+    time_added: Time added.
+    &#34;&#34;&#34;
+
+    id: int
+    parcel_id: int
+    carrier_id: int
+    carrier_name: str
+    status: str
+    text: str
+    location: str
+    latitude: float
+    longitude: float
+    time: datetime.datetime
+    time_added: datetime.datetime
+
+    @staticmethod
+    def from_dict(data: dict):
+        return TrackingEvent(
+            id=data.get(&#34;id&#34;),
+            parcel_id=data.get(&#34;parcel_id&#34;),
+            carrier_id=data.get(&#34;carrier_id&#34;),
+            carrier_name=data.get(&#34;carrier_name&#34;),
+            status=data.get(&#34;status&#34;),
+            text=data.get(&#34;text&#34;),
+            location=data.get(&#34;location&#34;),
+            latitude=data.get(&#34;latitude&#34;),
+            longitude=data.get(&#34;longitude&#34;),
+            time=datetime.datetime.fromisoformat(data.get(&#34;time&#34;).split(&#34;Z&#34;)[0]),
+            time_added=datetime.datetime.fromisoformat(data.get(&#34;time_added&#34;).split(&#34;Z&#34;)[0])
+        )</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="onetracker_api.models.TrackingEvent.carrier_id"><code class="name">var <span class="ident">carrier_id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent.carrier_name"><code class="name">var <span class="ident">carrier_name</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent.id"><code class="name">var <span class="ident">id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent.latitude"><code class="name">var <span class="ident">latitude</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent.location"><code class="name">var <span class="ident">location</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent.longitude"><code class="name">var <span class="ident">longitude</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent.parcel_id"><code class="name">var <span class="ident">parcel_id</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent.status"><code class="name">var <span class="ident">status</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent.text"><code class="name">var <span class="ident">text</span> : str</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent.time"><code class="name">var <span class="ident">time</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="onetracker_api.models.TrackingEvent.time_added"><code class="name">var <span class="ident">time_added</span> : datetime.datetime</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="onetracker_api.models.TrackingEvent.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>data: dict)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@staticmethod
+def from_dict(data: dict):
+    return TrackingEvent(
+        id=data.get(&#34;id&#34;),
+        parcel_id=data.get(&#34;parcel_id&#34;),
+        carrier_id=data.get(&#34;carrier_id&#34;),
+        carrier_name=data.get(&#34;carrier_name&#34;),
+        status=data.get(&#34;status&#34;),
+        text=data.get(&#34;text&#34;),
+        location=data.get(&#34;location&#34;),
+        latitude=data.get(&#34;latitude&#34;),
+        longitude=data.get(&#34;longitude&#34;),
+        time=datetime.datetime.fromisoformat(data.get(&#34;time&#34;).split(&#34;Z&#34;)[0]),
+        time_added=datetime.datetime.fromisoformat(data.get(&#34;time_added&#34;).split(&#34;Z&#34;)[0])
+    )</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="onetracker_api" href="index.html">onetracker_api</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="onetracker_api.models.AuthenticationTokenResponse" href="#onetracker_api.models.AuthenticationTokenResponse">AuthenticationTokenResponse</a></code></h4>
+<ul class="">
+<li><code><a title="onetracker_api.models.AuthenticationTokenResponse.from_dict" href="#onetracker_api.models.AuthenticationTokenResponse.from_dict">from_dict</a></code></li>
+<li><code><a title="onetracker_api.models.AuthenticationTokenResponse.message" href="#onetracker_api.models.AuthenticationTokenResponse.message">message</a></code></li>
+<li><code><a title="onetracker_api.models.AuthenticationTokenResponse.session" href="#onetracker_api.models.AuthenticationTokenResponse.session">session</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="onetracker_api.models.Carrier" href="#onetracker_api.models.Carrier">Carrier</a></code></h4>
+<ul class="">
+<li><code><a title="onetracker_api.models.Carrier.frequently_used" href="#onetracker_api.models.Carrier.frequently_used">frequently_used</a></code></li>
+<li><code><a title="onetracker_api.models.Carrier.from_dict" href="#onetracker_api.models.Carrier.from_dict">from_dict</a></code></li>
+<li><code><a title="onetracker_api.models.Carrier.id" href="#onetracker_api.models.Carrier.id">id</a></code></li>
+<li><code><a title="onetracker_api.models.Carrier.name" href="#onetracker_api.models.Carrier.name">name</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="onetracker_api.models.DeleteParcelResponse" href="#onetracker_api.models.DeleteParcelResponse">DeleteParcelResponse</a></code></h4>
+<ul class="">
+<li><code><a title="onetracker_api.models.DeleteParcelResponse.from_dict" href="#onetracker_api.models.DeleteParcelResponse.from_dict">from_dict</a></code></li>
+<li><code><a title="onetracker_api.models.DeleteParcelResponse.message" href="#onetracker_api.models.DeleteParcelResponse.message">message</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="onetracker_api.models.GetParcelResponse" href="#onetracker_api.models.GetParcelResponse">GetParcelResponse</a></code></h4>
+<ul class="">
+<li><code><a title="onetracker_api.models.GetParcelResponse.from_dict" href="#onetracker_api.models.GetParcelResponse.from_dict">from_dict</a></code></li>
+<li><code><a title="onetracker_api.models.GetParcelResponse.message" href="#onetracker_api.models.GetParcelResponse.message">message</a></code></li>
+<li><code><a title="onetracker_api.models.GetParcelResponse.parcel" href="#onetracker_api.models.GetParcelResponse.parcel">parcel</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="onetracker_api.models.ListCarriersResponse" href="#onetracker_api.models.ListCarriersResponse">ListCarriersResponse</a></code></h4>
+<ul class="">
+<li><code><a title="onetracker_api.models.ListCarriersResponse.carriers" href="#onetracker_api.models.ListCarriersResponse.carriers">carriers</a></code></li>
+<li><code><a title="onetracker_api.models.ListCarriersResponse.from_dict" href="#onetracker_api.models.ListCarriersResponse.from_dict">from_dict</a></code></li>
+<li><code><a title="onetracker_api.models.ListCarriersResponse.message" href="#onetracker_api.models.ListCarriersResponse.message">message</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="onetracker_api.models.ListParcelsResponse" href="#onetracker_api.models.ListParcelsResponse">ListParcelsResponse</a></code></h4>
+<ul class="">
+<li><code><a title="onetracker_api.models.ListParcelsResponse.from_dict" href="#onetracker_api.models.ListParcelsResponse.from_dict">from_dict</a></code></li>
+<li><code><a title="onetracker_api.models.ListParcelsResponse.message" href="#onetracker_api.models.ListParcelsResponse.message">message</a></code></li>
+<li><code><a title="onetracker_api.models.ListParcelsResponse.parcels" href="#onetracker_api.models.ListParcelsResponse.parcels">parcels</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="onetracker_api.models.Parcel" href="#onetracker_api.models.Parcel">Parcel</a></code></h4>
+<ul class="">
+<li><code><a title="onetracker_api.models.Parcel.carrier" href="#onetracker_api.models.Parcel.carrier">carrier</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.carrier_name" href="#onetracker_api.models.Parcel.carrier_name">carrier_name</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.carrier_redirection_available" href="#onetracker_api.models.Parcel.carrier_redirection_available">carrier_redirection_available</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.description" href="#onetracker_api.models.Parcel.description">description</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.email_id" href="#onetracker_api.models.Parcel.email_id">email_id</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.email_sender" href="#onetracker_api.models.Parcel.email_sender">email_sender</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.from_dict" href="#onetracker_api.models.Parcel.from_dict">from_dict</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.id" href="#onetracker_api.models.Parcel.id">id</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.is_archived" href="#onetracker_api.models.Parcel.is_archived">is_archived</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.notification_level" href="#onetracker_api.models.Parcel.notification_level">notification_level</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.retailer_name" href="#onetracker_api.models.Parcel.retailer_name">retailer_name</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.time_added" href="#onetracker_api.models.Parcel.time_added">time_added</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.time_updated" href="#onetracker_api.models.Parcel.time_updated">time_updated</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracker_cached" href="#onetracker_api.models.Parcel.tracker_cached">tracker_cached</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_events" href="#onetracker_api.models.Parcel.tracking_events">tracking_events</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_extra_info" href="#onetracker_api.models.Parcel.tracking_extra_info">tracking_extra_info</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_id" href="#onetracker_api.models.Parcel.tracking_id">tracking_id</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_location" href="#onetracker_api.models.Parcel.tracking_location">tracking_location</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_lock" href="#onetracker_api.models.Parcel.tracking_lock">tracking_lock</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_status" href="#onetracker_api.models.Parcel.tracking_status">tracking_status</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_status_description" href="#onetracker_api.models.Parcel.tracking_status_description">tracking_status_description</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_status_text" href="#onetracker_api.models.Parcel.tracking_status_text">tracking_status_text</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_time_delivered" href="#onetracker_api.models.Parcel.tracking_time_delivered">tracking_time_delivered</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_time_estimated" href="#onetracker_api.models.Parcel.tracking_time_estimated">tracking_time_estimated</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.tracking_url" href="#onetracker_api.models.Parcel.tracking_url">tracking_url</a></code></li>
+<li><code><a title="onetracker_api.models.Parcel.user_id" href="#onetracker_api.models.Parcel.user_id">user_id</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="onetracker_api.models.SessionObject" href="#onetracker_api.models.SessionObject">SessionObject</a></code></h4>
+<ul class="">
+<li><code><a title="onetracker_api.models.SessionObject.expiration" href="#onetracker_api.models.SessionObject.expiration">expiration</a></code></li>
+<li><code><a title="onetracker_api.models.SessionObject.from_dict" href="#onetracker_api.models.SessionObject.from_dict">from_dict</a></code></li>
+<li><code><a title="onetracker_api.models.SessionObject.token" href="#onetracker_api.models.SessionObject.token">token</a></code></li>
+<li><code><a title="onetracker_api.models.SessionObject.user_id" href="#onetracker_api.models.SessionObject.user_id">user_id</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="onetracker_api.models.TrackingEvent" href="#onetracker_api.models.TrackingEvent">TrackingEvent</a></code></h4>
+<ul class="two-column">
+<li><code><a title="onetracker_api.models.TrackingEvent.carrier_id" href="#onetracker_api.models.TrackingEvent.carrier_id">carrier_id</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.carrier_name" href="#onetracker_api.models.TrackingEvent.carrier_name">carrier_name</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.from_dict" href="#onetracker_api.models.TrackingEvent.from_dict">from_dict</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.id" href="#onetracker_api.models.TrackingEvent.id">id</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.latitude" href="#onetracker_api.models.TrackingEvent.latitude">latitude</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.location" href="#onetracker_api.models.TrackingEvent.location">location</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.longitude" href="#onetracker_api.models.TrackingEvent.longitude">longitude</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.parcel_id" href="#onetracker_api.models.TrackingEvent.parcel_id">parcel_id</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.status" href="#onetracker_api.models.TrackingEvent.status">status</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.text" href="#onetracker_api.models.TrackingEvent.text">text</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.time" href="#onetracker_api.models.TrackingEvent.time">time</a></code></li>
+<li><code><a title="onetracker_api.models.TrackingEvent.time_added" href="#onetracker_api.models.TrackingEvent.time_added">time_added</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

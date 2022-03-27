@@ -41,7 +41,7 @@ setup(
     version=get_version(),
     install_requires=list(val.strip() for val in open("requirements.txt")),
     keywords=["onetracker", "api", "async", "client"],
-    license="MIT license",
+    license="GPLv3.0",
     long_description_content_type="text/markdown",
     long_description=readme,
     name="onetracker_api",

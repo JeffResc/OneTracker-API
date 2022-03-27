@@ -154,6 +154,10 @@ class OneTracker(Client):
 
         Returns:
             GetParcelResponse: Parcel Response Object.
+
+        Raises:
+
+        OneTrackerError: If get parcel failed.
         """
         self.__check_session_object__()
         self.__check_parcel_id__(id)
@@ -173,6 +177,10 @@ class OneTracker(Client):
 
         Returns:
             DeleteParcelResponse: Delete Parcel Response Object.
+
+        Raises:
+
+        OneTrackerError: If delete parcel failed.
         """
         self.__check_session_object__()
         self.__check_parcel_id__(id)
@@ -192,6 +200,10 @@ class OneTracker(Client):
 
         Returns:
             ListCarrierResponse: List Carrier Response Object.
+
+        Raises:
+
+        OneTrackerError: If list carriers failed.
         """
         self.__check_session_object__()
         if tracking_id is not None:

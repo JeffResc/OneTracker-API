@@ -1,0 +1,30 @@
+{
+    "message": "ok",
+    "parcels": [{
+        "id": 174,
+        "user_id": 6,
+        "email_id": 183,
+        "email_sender": "example.com",
+        "retailer_name": "Example",
+        "description": "Camera",
+        "notification_level": 1,
+        "is_archived": 0,
+        "carrier": "FedEx",
+        "carrier_name": "FedEx",
+        "carrier_redirection_available": true,
+        "tracker_cached": false,
+        "tracking_id": "407072905722",
+        "tracking_url": "",
+        "tracking_status": "delivered",
+        "tracking_status_description": "",
+        "tracking_status_text": "",
+        "tracking_extra_info": "",
+        "tracking_location": "Sunnyvale, CA",
+        "tracking_time_estimated": "2018-08-08T20:00:00Z",
+        "tracking_time_delivered": "2018-08-08T15:51:00Z",
+        "tracking_lock": 0,
+        "tracking_events": null,
+        "time_added": "2018-08-07T00:50:30Z",
+        "time_updated": "2018-08-18T20:01:23Z"
+    }]
+}

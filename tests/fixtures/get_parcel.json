@@ -1,0 +1,56 @@
+{
+    "message": "ok",
+    "parcel": {
+        "id": 938,
+        "user_id": 6,
+        "email_id": 0,
+        "email_sender": "",
+        "retailer_name": "",
+        "description": "",
+        "notification_level": 1,
+        "is_archived": 0,
+        "carrier": "FedEx",
+        "carrier_name": "",
+        "carrier_redirection_available": false,
+        "tracker_cached": false,
+        "tracking_id": "123456789012",
+        "tracking_url": "",
+        "tracking_status": "delivered",
+        "tracking_status_description": "",
+        "tracking_status_text": "",
+        "tracking_extra_info": "",
+        "tracking_location": "MEMPHIS, TN",
+        "tracking_time_estimated": "1001-01-01T00:00:00Z",
+        "tracking_time_delivered": "2020-01-17T16:30:00Z",
+        "tracking_lock": 0,
+        "tracking_events": [{
+                "id": 5699,
+                "parcel_id": 938,
+                "carrier_id": "",
+                "carrier_name": "",
+                "status": "delivered",
+                "text": "Delivered. Signed for by: REF 39609023995",
+                "location": "MEMPHIS, TN",
+                "latitude": 35.149536,
+                "longitude": -90.04898,
+                "time": "2020-01-17T16:30:00Z",
+                "time_added": "2020-05-05T05:47:56Z"
+            },
+            {
+                "id": 5697,
+                "parcel_id": 938,
+                "carrier_id": "",
+                "carrier_name": "",
+                "status": "pre_transit",
+                "text": "Shipment information sent to FedEx",
+                "location": "",
+                "latitude": 0,
+                "longitude": 0,
+                "time": "2019-12-09T07:50:11Z",
+                "time_added": "2020-05-05T05:47:56Z"
+            }
+        ],
+        "time_added": "2020-05-05T04:42:39Z",
+        "time_updated": "2020-05-05T05:47:56Z"
+    }
+}

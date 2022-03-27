@@ -1,0 +1,5 @@
+include README.md
+include LICENSE
+include requirements.txt
+graft onetracker_api
+recursive-exclude * *.py[co]

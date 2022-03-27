@@ -137,6 +137,10 @@ class OneTracker(Client):
 
         Returns:
             AuthenticationTokenResponse: Authentication Token Response Object.
+
+        Raises:
+
+        OneTrackerError: If login failed.
         &#34;&#34;&#34;
         try:
             results = await self._request(&#34;/auth/token&#34;, method=&#39;POST&#39;, data=json.dumps({&#34;email&#34;: email, &#34;password&#34;: password}))
@@ -156,6 +160,10 @@ class OneTracker(Client):
 
         Returns:
             ListParcelsResponse: List Parcels Response Object.
+
+        Raises:
+
+        OneTrackerError: If list parcels failed.
         &#34;&#34;&#34;
         self.__check_session_object__()
         archived_str = &#34;true&#34; if archived else &#34;false&#34;
@@ -349,6 +357,10 @@ class OneTracker(Client):
 
         Returns:
             AuthenticationTokenResponse: Authentication Token Response Object.
+
+        Raises:
+
+        OneTrackerError: If login failed.
         &#34;&#34;&#34;
         try:
             results = await self._request(&#34;/auth/token&#34;, method=&#39;POST&#39;, data=json.dumps({&#34;email&#34;: email, &#34;password&#34;: password}))
@@ -368,6 +380,10 @@ class OneTracker(Client):
 
         Returns:
             ListParcelsResponse: List Parcels Response Object.
+
+        Raises:
+
+        OneTrackerError: If list parcels failed.
         &#34;&#34;&#34;
         self.__check_session_object__()
         archived_str = &#34;true&#34; if archived else &#34;false&#34;
@@ -573,7 +589,9 @@ class OneTracker(Client):
 <dl>
 <dt><code>ListParcelsResponse</code></dt>
 <dd>List Parcels Response Object.</dd>
-</dl></div>
+</dl>
+<p>Raises:</p>
+<p>OneTrackerError: If list parcels failed.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -588,6 +606,10 @@ class OneTracker(Client):
 
     Returns:
         ListParcelsResponse: List Parcels Response Object.
+
+    Raises:
+
+    OneTrackerError: If list parcels failed.
     &#34;&#34;&#34;
     self.__check_session_object__()
     archived_str = &#34;true&#34; if archived else &#34;false&#34;
@@ -610,7 +632,9 @@ class OneTracker(Client):
 <dl>
 <dt><code>AuthenticationTokenResponse</code></dt>
 <dd>Authentication Token Response Object.</dd>
-</dl></div>
+</dl>
+<p>Raises:</p>
+<p>OneTrackerError: If login failed.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -627,6 +651,10 @@ class OneTracker(Client):
 
     Returns:
         AuthenticationTokenResponse: Authentication Token Response Object.
+
+    Raises:
+
+    OneTrackerError: If login failed.
     &#34;&#34;&#34;
     try:
         results = await self._request(&#34;/auth/token&#34;, method=&#39;POST&#39;, data=json.dumps({&#34;email&#34;: email, &#34;password&#34;: password}))

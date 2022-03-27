@@ -14,7 +14,6 @@ pip install onetracker-api
 import asyncio
 
 from onetracker_api import OneTracker
-from onetracker_api.models import SessionObject
 
 async def main():
     async with OneTracker() as onetracker:

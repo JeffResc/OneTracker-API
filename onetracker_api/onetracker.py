@@ -138,7 +138,12 @@ class OneTracker(Client):
         """
         self.__check_session_object__()
         archived_str = "true" if archived else "false"
-        results = await self._request("/parcels?archived={}".format(archived_str), method='GET', headers={"x-api-token": self.session_object.token})
+        results = await self._request(
+            f"/parcels?archived={archived_str}",
+            method='GET',
+            headers={"x-api-token": self.session_object.token},
+        )
+
         try:
             return ListParcelsResponse.from_dict(results)
         except OneTrackerError as e:
@@ -161,7 +166,12 @@ class OneTracker(Client):
         """
         self.__check_session_object__()
         self.__check_parcel_id__(id)
-        results = await self._request("/parcels/{}".format(id), method='GET', headers={"x-api-token": self.session_object.token})
+        results = await self._request(
+            f"/parcels/{id}",
+            method='GET',
+            headers={"x-api-token": self.session_object.token},
+        )
+
         try:
             return GetParcelResponse.from_dict(results)
         except OneTrackerError as e:
@@ -184,7 +194,12 @@ class OneTracker(Client):
         """
         self.__check_session_object__()
         self.__check_parcel_id__(id)
-        results = await self._request("/parcels/{}".format(id), method='DELETE', headers={"x-api-token": self.session_object.token})
+        results = await self._request(
+            f"/parcels/{id}",
+            method='DELETE',
+            headers={"x-api-token": self.session_object.token},
+        )
+
         try:
             return DeleteParcelResponse.from_dict(results)
         except OneTrackerError as e:
@@ -208,7 +223,12 @@ class OneTracker(Client):
         self.__check_session_object__()
         if tracking_id is not None:
             self.__check_tracking_id__(tracking_id)
-            results = await self._request("/carriers?trackingID={}".format(tracking_id), method='GET', headers={"x-api-token": self.session_object.token})
+            results = await self._request(
+                f"/carriers?trackingID={tracking_id}",
+                method='GET',
+                headers={"x-api-token": self.session_object.token},
+            )
+
         else:
             results = await self._request("/carriers", method='GET', headers={"x-api-token": self.session_object.token})
         try:

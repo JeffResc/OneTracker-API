@@ -135,13 +135,13 @@ class Client:
             if response.status == 401 and error_message == &#34;Invalid API token&#34;:
                 raise OneTrackerAuthenticationError(error_message)
             elif response.status &gt;= 400 and response.status &lt;= 499:
-                raise OneTrackerClientError(&#34;{}: {}&#34;.format(response.status, error_message))
+                raise OneTrackerClientError(f&#34;{response.status}: {error_message}&#34;)
             elif response.status &gt;= 500 and response.status &lt;= 599:
-                raise OneTrackerInternalServerError(&#34;{}: {}&#34;.format(response.status, error_message))
+                raise OneTrackerInternalServerError(f&#34;{response.status}: {error_message}&#34;)
 
         content_type = response.headers.get(&#34;Content-Type&#34;, &#34;&#34;)
 
-        
+
         try:
             data = await response.json()
             return data
@@ -277,13 +277,13 @@ class Client:
             if response.status == 401 and error_message == &#34;Invalid API token&#34;:
                 raise OneTrackerAuthenticationError(error_message)
             elif response.status &gt;= 400 and response.status &lt;= 499:
-                raise OneTrackerClientError(&#34;{}: {}&#34;.format(response.status, error_message))
+                raise OneTrackerClientError(f&#34;{response.status}: {error_message}&#34;)
             elif response.status &gt;= 500 and response.status &lt;= 599:
-                raise OneTrackerInternalServerError(&#34;{}: {}&#34;.format(response.status, error_message))
+                raise OneTrackerInternalServerError(f&#34;{response.status}: {error_message}&#34;)
 
         content_type = response.headers.get(&#34;Content-Type&#34;, &#34;&#34;)
 
-        
+
         try:
             data = await response.json()
             return data

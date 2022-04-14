@@ -167,7 +167,12 @@ class OneTracker(Client):
         &#34;&#34;&#34;
         self.__check_session_object__()
         archived_str = &#34;true&#34; if archived else &#34;false&#34;
-        results = await self._request(&#34;/parcels?archived={}&#34;.format(archived_str), method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+        results = await self._request(
+            f&#34;/parcels?archived={archived_str}&#34;,
+            method=&#39;GET&#39;,
+            headers={&#34;x-api-token&#34;: self.session_object.token},
+        )
+
         try:
             return ListParcelsResponse.from_dict(results)
         except OneTrackerError as e:
@@ -190,7 +195,12 @@ class OneTracker(Client):
         &#34;&#34;&#34;
         self.__check_session_object__()
         self.__check_parcel_id__(id)
-        results = await self._request(&#34;/parcels/{}&#34;.format(id), method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+        results = await self._request(
+            f&#34;/parcels/{id}&#34;,
+            method=&#39;GET&#39;,
+            headers={&#34;x-api-token&#34;: self.session_object.token},
+        )
+
         try:
             return GetParcelResponse.from_dict(results)
         except OneTrackerError as e:
@@ -213,7 +223,12 @@ class OneTracker(Client):
         &#34;&#34;&#34;
         self.__check_session_object__()
         self.__check_parcel_id__(id)
-        results = await self._request(&#34;/parcels/{}&#34;.format(id), method=&#39;DELETE&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+        results = await self._request(
+            f&#34;/parcels/{id}&#34;,
+            method=&#39;DELETE&#39;,
+            headers={&#34;x-api-token&#34;: self.session_object.token},
+        )
+
         try:
             return DeleteParcelResponse.from_dict(results)
         except OneTrackerError as e:
@@ -237,7 +252,12 @@ class OneTracker(Client):
         self.__check_session_object__()
         if tracking_id is not None:
             self.__check_tracking_id__(tracking_id)
-            results = await self._request(&#34;/carriers?trackingID={}&#34;.format(tracking_id), method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+            results = await self._request(
+                f&#34;/carriers?trackingID={tracking_id}&#34;,
+                method=&#39;GET&#39;,
+                headers={&#34;x-api-token&#34;: self.session_object.token},
+            )
+
         else:
             results = await self._request(&#34;/carriers&#34;, method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
         try:
@@ -399,7 +419,12 @@ class OneTracker(Client):
         &#34;&#34;&#34;
         self.__check_session_object__()
         archived_str = &#34;true&#34; if archived else &#34;false&#34;
-        results = await self._request(&#34;/parcels?archived={}&#34;.format(archived_str), method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+        results = await self._request(
+            f&#34;/parcels?archived={archived_str}&#34;,
+            method=&#39;GET&#39;,
+            headers={&#34;x-api-token&#34;: self.session_object.token},
+        )
+
         try:
             return ListParcelsResponse.from_dict(results)
         except OneTrackerError as e:
@@ -422,7 +447,12 @@ class OneTracker(Client):
         &#34;&#34;&#34;
         self.__check_session_object__()
         self.__check_parcel_id__(id)
-        results = await self._request(&#34;/parcels/{}&#34;.format(id), method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+        results = await self._request(
+            f&#34;/parcels/{id}&#34;,
+            method=&#39;GET&#39;,
+            headers={&#34;x-api-token&#34;: self.session_object.token},
+        )
+
         try:
             return GetParcelResponse.from_dict(results)
         except OneTrackerError as e:
@@ -445,7 +475,12 @@ class OneTracker(Client):
         &#34;&#34;&#34;
         self.__check_session_object__()
         self.__check_parcel_id__(id)
-        results = await self._request(&#34;/parcels/{}&#34;.format(id), method=&#39;DELETE&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+        results = await self._request(
+            f&#34;/parcels/{id}&#34;,
+            method=&#39;DELETE&#39;,
+            headers={&#34;x-api-token&#34;: self.session_object.token},
+        )
+
         try:
             return DeleteParcelResponse.from_dict(results)
         except OneTrackerError as e:
@@ -469,7 +504,12 @@ class OneTracker(Client):
         self.__check_session_object__()
         if tracking_id is not None:
             self.__check_tracking_id__(tracking_id)
-            results = await self._request(&#34;/carriers?trackingID={}&#34;.format(tracking_id), method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+            results = await self._request(
+                f&#34;/carriers?trackingID={tracking_id}&#34;,
+                method=&#39;GET&#39;,
+                headers={&#34;x-api-token&#34;: self.session_object.token},
+            )
+
         else:
             results = await self._request(&#34;/carriers&#34;, method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
         try:
@@ -526,7 +566,12 @@ class OneTracker(Client):
     &#34;&#34;&#34;
     self.__check_session_object__()
     self.__check_parcel_id__(id)
-    results = await self._request(&#34;/parcels/{}&#34;.format(id), method=&#39;DELETE&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+    results = await self._request(
+        f&#34;/parcels/{id}&#34;,
+        method=&#39;DELETE&#39;,
+        headers={&#34;x-api-token&#34;: self.session_object.token},
+    )
+
     try:
         return DeleteParcelResponse.from_dict(results)
     except OneTrackerError as e:
@@ -568,7 +613,12 @@ class OneTracker(Client):
     &#34;&#34;&#34;
     self.__check_session_object__()
     self.__check_parcel_id__(id)
-    results = await self._request(&#34;/parcels/{}&#34;.format(id), method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+    results = await self._request(
+        f&#34;/parcels/{id}&#34;,
+        method=&#39;GET&#39;,
+        headers={&#34;x-api-token&#34;: self.session_object.token},
+    )
+
     try:
         return GetParcelResponse.from_dict(results)
     except OneTrackerError as e:
@@ -611,7 +661,12 @@ class OneTracker(Client):
     self.__check_session_object__()
     if tracking_id is not None:
         self.__check_tracking_id__(tracking_id)
-        results = await self._request(&#34;/carriers?trackingID={}&#34;.format(tracking_id), method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+        results = await self._request(
+            f&#34;/carriers?trackingID={tracking_id}&#34;,
+            method=&#39;GET&#39;,
+            headers={&#34;x-api-token&#34;: self.session_object.token},
+        )
+
     else:
         results = await self._request(&#34;/carriers&#34;, method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
     try:
@@ -655,7 +710,12 @@ class OneTracker(Client):
     &#34;&#34;&#34;
     self.__check_session_object__()
     archived_str = &#34;true&#34; if archived else &#34;false&#34;
-    results = await self._request(&#34;/parcels?archived={}&#34;.format(archived_str), method=&#39;GET&#39;, headers={&#34;x-api-token&#34;: self.session_object.token})
+    results = await self._request(
+        f&#34;/parcels?archived={archived_str}&#34;,
+        method=&#39;GET&#39;,
+        headers={&#34;x-api-token&#34;: self.session_object.token},
+    )
+
     try:
         return ListParcelsResponse.from_dict(results)
     except OneTrackerError as e:

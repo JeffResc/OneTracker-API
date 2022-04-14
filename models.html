@@ -79,16 +79,15 @@ class AuthenticationTokenResponse:
 
     @staticmethod
     def from_dict(data: dict):
-        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-            if data.get(&#34;message&#34;):
-                raise OneTrackerError(data.get(&#34;message&#34;))
-            else:
-                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-        else:
+        if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
             return AuthenticationTokenResponse(
                 message=data.get(&#34;message&#34;),
                 session=SessionObject.from_dict(data.get(&#34;session&#34;))
             )
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
 
 @dataclass(frozen=True)
 class TrackingEvent:
@@ -280,16 +279,15 @@ class ListParcelsResponse:
 
     @staticmethod
     def from_dict(data: dict):
-        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-            if data.get(&#34;message&#34;):
-                raise OneTrackerError(data.get(&#34;message&#34;))
-            else:
-                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-        else:
+        if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
             return ListParcelsResponse(
                 message=data.get(&#34;message&#34;),
                 parcels=[Parcel.from_dict(parcel) for parcel in data.get(&#34;parcels&#34;) or []]
             )
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
 
 @dataclass(frozen=True)
 class GetParcelResponse:
@@ -308,16 +306,15 @@ class GetParcelResponse:
 
     @staticmethod
     def from_dict(data: dict):
-        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-            if data.get(&#34;message&#34;):
-                raise OneTrackerError(data.get(&#34;message&#34;))
-            else:
-                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-        else:
+        if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
             return GetParcelResponse(
                 message=data.get(&#34;message&#34;),
                 parcel=Parcel.from_dict(data.get(&#34;parcel&#34;))
             )
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
 
 @dataclass(frozen=True)
 class DeleteParcelResponse:
@@ -333,15 +330,14 @@ class DeleteParcelResponse:
 
     @staticmethod
     def from_dict(data: dict):
-        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-            if data.get(&#34;message&#34;):
-                raise OneTrackerError(data.get(&#34;message&#34;))
-            else:
-                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-        else:
+        if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
             return DeleteParcelResponse(
                 message=data.get(&#34;message&#34;)
             )
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
 
 @dataclass(frozen=True)
 class Carrier:
@@ -386,16 +382,15 @@ class ListCarriersResponse:
 
     @staticmethod
     def from_dict(data: dict):
-        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-            if data.get(&#34;message&#34;):
-                raise OneTrackerError(data.get(&#34;message&#34;))
-            else:
-                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-        else:
+        if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
             return ListCarriersResponse(
                 message=data.get(&#34;message&#34;),
                 carriers=[Carrier.from_dict(carrier) for carrier in data.get(&#34;carriers&#34;) or []]
-            )</code></pre>
+            )
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 </section>
 <section>
@@ -436,16 +431,15 @@ class ListCarriersResponse:
 
     @staticmethod
     def from_dict(data: dict):
-        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-            if data.get(&#34;message&#34;):
-                raise OneTrackerError(data.get(&#34;message&#34;))
-            else:
-                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-        else:
+        if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
             return AuthenticationTokenResponse(
                 message=data.get(&#34;message&#34;),
                 session=SessionObject.from_dict(data.get(&#34;session&#34;))
-            )</code></pre>
+            )
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 <h3>Class variables</h3>
 <dl>
@@ -471,16 +465,15 @@ class ListCarriersResponse:
 </summary>
 <pre><code class="python">@staticmethod
 def from_dict(data: dict):
-    if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-        if data.get(&#34;message&#34;):
-            raise OneTrackerError(data.get(&#34;message&#34;))
-        else:
-            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-    else:
+    if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
         return AuthenticationTokenResponse(
             message=data.get(&#34;message&#34;),
             session=SessionObject.from_dict(data.get(&#34;session&#34;))
-        )</code></pre>
+        )
+    if data.get(&#34;message&#34;):
+        raise OneTrackerError(data.get(&#34;message&#34;))
+    else:
+        raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 </dd>
 </dl>
@@ -586,15 +579,14 @@ def from_dict(data: dict):
 
     @staticmethod
     def from_dict(data: dict):
-        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-            if data.get(&#34;message&#34;):
-                raise OneTrackerError(data.get(&#34;message&#34;))
-            else:
-                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-        else:
+        if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
             return DeleteParcelResponse(
                 message=data.get(&#34;message&#34;)
-            )</code></pre>
+            )
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 <h3>Class variables</h3>
 <dl>
@@ -616,15 +608,14 @@ def from_dict(data: dict):
 </summary>
 <pre><code class="python">@staticmethod
 def from_dict(data: dict):
-    if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-        if data.get(&#34;message&#34;):
-            raise OneTrackerError(data.get(&#34;message&#34;))
-        else:
-            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-    else:
+    if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
         return DeleteParcelResponse(
             message=data.get(&#34;message&#34;)
-        )</code></pre>
+        )
+    if data.get(&#34;message&#34;):
+        raise OneTrackerError(data.get(&#34;message&#34;))
+    else:
+        raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 </dd>
 </dl>
@@ -658,16 +649,15 @@ def from_dict(data: dict):
 
     @staticmethod
     def from_dict(data: dict):
-        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-            if data.get(&#34;message&#34;):
-                raise OneTrackerError(data.get(&#34;message&#34;))
-            else:
-                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-        else:
+        if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
             return GetParcelResponse(
                 message=data.get(&#34;message&#34;),
                 parcel=Parcel.from_dict(data.get(&#34;parcel&#34;))
-            )</code></pre>
+            )
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 <h3>Class variables</h3>
 <dl>
@@ -693,16 +683,15 @@ def from_dict(data: dict):
 </summary>
 <pre><code class="python">@staticmethod
 def from_dict(data: dict):
-    if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-        if data.get(&#34;message&#34;):
-            raise OneTrackerError(data.get(&#34;message&#34;))
-        else:
-            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-    else:
+    if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
         return GetParcelResponse(
             message=data.get(&#34;message&#34;),
             parcel=Parcel.from_dict(data.get(&#34;parcel&#34;))
-        )</code></pre>
+        )
+    if data.get(&#34;message&#34;):
+        raise OneTrackerError(data.get(&#34;message&#34;))
+    else:
+        raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 </dd>
 </dl>
@@ -736,16 +725,15 @@ def from_dict(data: dict):
 
     @staticmethod
     def from_dict(data: dict):
-        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-            if data.get(&#34;message&#34;):
-                raise OneTrackerError(data.get(&#34;message&#34;))
-            else:
-                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-        else:
+        if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
             return ListCarriersResponse(
                 message=data.get(&#34;message&#34;),
                 carriers=[Carrier.from_dict(carrier) for carrier in data.get(&#34;carriers&#34;) or []]
-            )</code></pre>
+            )
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 <h3>Class variables</h3>
 <dl>
@@ -771,16 +759,15 @@ def from_dict(data: dict):
 </summary>
 <pre><code class="python">@staticmethod
 def from_dict(data: dict):
-    if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-        if data.get(&#34;message&#34;):
-            raise OneTrackerError(data.get(&#34;message&#34;))
-        else:
-            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-    else:
+    if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
         return ListCarriersResponse(
             message=data.get(&#34;message&#34;),
             carriers=[Carrier.from_dict(carrier) for carrier in data.get(&#34;carriers&#34;) or []]
-        )</code></pre>
+        )
+    if data.get(&#34;message&#34;):
+        raise OneTrackerError(data.get(&#34;message&#34;))
+    else:
+        raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 </dd>
 </dl>
@@ -814,16 +801,15 @@ def from_dict(data: dict):
 
     @staticmethod
     def from_dict(data: dict):
-        if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-            if data.get(&#34;message&#34;):
-                raise OneTrackerError(data.get(&#34;message&#34;))
-            else:
-                raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-        else:
+        if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
             return ListParcelsResponse(
                 message=data.get(&#34;message&#34;),
                 parcels=[Parcel.from_dict(parcel) for parcel in data.get(&#34;parcels&#34;) or []]
-            )</code></pre>
+            )
+        if data.get(&#34;message&#34;):
+            raise OneTrackerError(data.get(&#34;message&#34;))
+        else:
+            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 <h3>Class variables</h3>
 <dl>
@@ -849,16 +835,15 @@ def from_dict(data: dict):
 </summary>
 <pre><code class="python">@staticmethod
 def from_dict(data: dict):
-    if data is {} or data is None or not data.get(&#34;message&#34;) == &#34;ok&#34;:
-        if data.get(&#34;message&#34;):
-            raise OneTrackerError(data.get(&#34;message&#34;))
-        else:
-            raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)
-    else:
+    if data is not {} and data is not None and data.get(&#34;message&#34;) == &#34;ok&#34;:
         return ListParcelsResponse(
             message=data.get(&#34;message&#34;),
             parcels=[Parcel.from_dict(parcel) for parcel in data.get(&#34;parcels&#34;) or []]
-        )</code></pre>
+        )
+    if data.get(&#34;message&#34;):
+        raise OneTrackerError(data.get(&#34;message&#34;))
+    else:
+        raise OneTrackerError(&#34;Unable to convert data to GetParcelResponse.&#34;)</code></pre>
 </details>
 </dd>
 </dl>

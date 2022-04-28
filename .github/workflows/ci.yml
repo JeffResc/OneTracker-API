@@ -65,4 +65,4 @@ jobs:
         folder: html/onetracker_api
     - name: Trigger documentation website rebuild
       run: |
-        curl -X GET "${{ DOCS_BUILD_HOOK }}"
+        curl -X GET "${{ secrets.DOCS_BUILD_HOOK }}"
